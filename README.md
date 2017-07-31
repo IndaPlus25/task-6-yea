@@ -191,7 +191,8 @@ Add a method to LogAnalyzer that finds which two-hour period is the busiest.
 Return the value of the first hour of this period.
 
 ### Executing without BlueJ: The Java `main` method!
-[Read this material about the Java main method](THERE WILL BE A LINK HERE)
+Read to and including the `HelloWorld` example in
+[Executing without BlueJ - The Java main method](https://gits-15.sys.kth.se/inda-17/extra-reading-material/tree/master/main-method).
 
 Remember the `isPrime` method from last week (exercise 4.33)? Now, you will
 execute it from the main method! Create a new file called `PrimeChecker.java`
