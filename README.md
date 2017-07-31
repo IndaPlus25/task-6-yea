@@ -10,11 +10,12 @@ Study sections 4.12 to 4.17 from the course textbook and be prepared to answer
 any of the exercises.
 
 ### Github Task:
-You must complete the following exercises (n.b 5th Edition only here, but the
-exercise texts can be found further down):
+You must complete the following exercises. Note that exercises that have
+different numbering in the 6th edition have been marked.
+
 - 4.48 - 4.52
 - 4.56 - 4.59
-- 4.73 - 4.78
+- 4.73 - 4.78 (7.13 - 7.18 in 6th ed)
 
 Please commit any written answers to the "docs" folder, and commit any Java code
 developed to the "code" folder of your KTH Github repo. Remember to push to KTH
@@ -129,7 +130,7 @@ products and then call its `increaseQuantity` method.
 
 ### Log Analyzer Project
 
-#### Exercise 4.73
+#### Exercise 4.73 (7.13 in 6th ed)
 Complete the `numberOfAccesses` method, below, to count the total number of
 accesses recorded in the log file. Complete it by using a for loop to iterate
 over `hourCounts`:
@@ -147,7 +148,7 @@ public int numberOfAccesses() {
 }
 ```
 
-#### Exercise 4.74
+#### Exercise 4.74 (7.14 in 6th ed)
 Add your `numberOfAccesses` method to the LogAnalyzer class and check that it
 gives the correct result.
 
@@ -166,7 +167,7 @@ file:
 public LogfileReader(String filename)
 ```
 
-#### Exercise 4.75
+#### Exercise 4.75, (7.15 in 6th ed)
 Add a method `busiestHour` to LogAnalyzer that returns the busiest hour. You can
 do this by looking through the `hourCounts` array to find the element with the
 biggest count.
@@ -175,16 +176,31 @@ Hint: Do you need to check every element to see if you have found the busiest
 hour? If so, use a for loop or a for-each loop. Which one is better in this
 case?
 
-#### Exercise 4.76
+#### Exercise 4.76 (7.16 in 6th ed)
 Add a method `quietestHour` to LogAnalyzer that returns the number of the least
 busy hour. Note: This sounds almost identical to the previous exercise, but
 there is a small trap for the unwary here. Be sure to check your method with
 some data in which every hour has a non-zero count.
 
-#### Exercise 4.77
+#### Exercise 4.77 (7.17 in 6th ed)
 Which hour is returned by your `busiestHour` method if more than one hour has
 the biggest count?
 
-#### Exercise 4.78
+#### Exercise 4.78 (7.18 in 6th ed)
 Add a method to LogAnalyzer that finds which two-hour period is the busiest.
 Return the value of the first hour of this period.
+
+### Executing without BlueJ: The Java `main` method!
+[Read this material about the Java main method](THERE WILL BE A LINK HERE)
+
+Remember the `isPrime` method from last week (exercise 4.33)? Now, you will
+execute it from the main method! Create a new file called `PrimeChecker.java`
+containing a class called `PrimeChecker`, and copy your `isPrime` function
+from last week into the new class.
+
+Your task is now to write a main method that loops over the range `[1, 25]`
+(i.e. inclusive at both ends) and checks whether the current number is prime or
+not. For each number, you should print:
+
+* `n is a prime number!`, if `isPrime(n)` returns `true`.
+* `n is not a prime number :(`, if `isPrime(n)` returns `false`
