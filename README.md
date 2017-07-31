@@ -6,8 +6,8 @@ For instructions on how to do and submit the assignment, please see the
 [assignments section of the course instructions](https://gits-15.sys.kth.se/inda-17/course-instructions#assignments).
 
 ### Homework
-Study sections 4.12 to 4.17 from the course textbook and be prepared to answer
-any of the exercises.
+Study sections: 4.12 to 4.17 (4.12 to 4.15 and 7.1 to 7.4 in 6th ed) from the
+course textbook and be prepared to answer any of the exercises.
 
 ### Github Task:
 You must complete the following exercises. Note that exercises that have
@@ -198,9 +198,9 @@ execute it from the main method! Create a new file called `PrimeChecker.java`
 containing a class called `PrimeChecker`, and copy your `isPrime` function
 from last week into the new class.
 
-Your task is now to write a main method that loops over the range `[1, 25]`
-(i.e. inclusive at both ends) and checks whether the current number is prime or
-not. For each number, you should print:
+Your task is now to write a main method that loops over the range from 1 to and
+including 25 and checks whether the current number is prime or not. For each
+number, you should print:
 
 * `n is a prime number!`, if `isPrime(n)` returns `true`.
 * `n is not a prime number :(`, if `isPrime(n)` returns `false`
