@@ -11,7 +11,7 @@ Study sections:
 * **5th ed:** 4.12 -- 4.17 
 * **6th ed:** 4.12 to 4.15 and 7.1 to 7.4
 
-from the course textbook and be prepared to answer any of the exercises.
+of _Objects First with Bluej_ be prepared to answer any of the exercises.
 
 Also read up to and including the `Hello world` example in
 [Executing without BlueJ - The Java main method](https://gits-15.sys.kth.se/inda-17/extra-reading-material/tree/master/main-method).
@@ -85,6 +85,9 @@ public Lot removeLot(int number)
 
 This method should not assume that a lot with a given number is stored at any
 particular location within the collection.
+
+> **Assistant's note:** That is to say, the method should _not_ assume that
+> `number - 1` is the index of the `Lot`!
 
 ### Stock Manager Project
 
