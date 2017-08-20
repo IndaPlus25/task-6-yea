@@ -212,9 +212,9 @@ execute it from the main method! Create a new file called `PrimeChecker.java`
 containing a class called `PrimeChecker`, and copy your `isPrime` function
 from last week into the new class.
 
-Your task is now to write a main method that loops over the from 1 to and
-including 25 and checks whether the current number is prime or not. For each
-number, you should print:
+Your task is now to write a main method that loops from 1 to and including 25
+and checks whether the current number is prime or not. For each number, you
+should print:
 
 * `n is a prime number!`, if `isPrime(n)` returns `true`.
 * `n is not a prime number :(`, if `isPrime(n)` returns `false`
