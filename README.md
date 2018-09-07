@@ -3,18 +3,18 @@ This work should be completed before the exercise on **Friday 13th October**.
 
 ### Instructions
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-17/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-18/course-instructions#assignments).
 
 ### Homework
-Study sections: 
+Study sections:
 
-* **5th ed:** 4.12 -- 4.17 
+* **5th ed:** 4.12 -- 4.17
 * **6th ed:** 4.12 to 4.15 and 7.1 to 7.4
 
 of _Objects First with Bluej_ be prepared to answer any of the exercises.
 
 Also read up to and including the `Hello world` example in
-[Executing without BlueJ - The Java main method](https://gits-15.sys.kth.se/inda-17/extra-reading-material/tree/master/main-method).
+[Executing without BlueJ - The Java main method](https://gits-15.sys.kth.se/inda-18/extra-reading-material/tree/master/main-method).
 
 ### Github Task:
 You must complete the following exercises. Note that exercises that have
@@ -204,7 +204,7 @@ Return the value of the first hour of this period.
 
 ### Executing without BlueJ: The Java `main` method!
 Read to and including the `HelloWorld` example in
-[Executing without BlueJ - The Java main method](https://gits-15.sys.kth.se/inda-17/extra-reading-material/tree/master/main-method).
+[Executing without BlueJ - The Java main method](https://gits-15.sys.kth.se/inda-18/extra-reading-material/tree/master/main-method).
 
 #### Exercise 4.XX
 Remember the `isPrime` method from last week (exercise 4.33)? Now, you will
@@ -218,3 +218,6 @@ should print:
 
 * `n is a prime number!`, if `isPrime(n)` returns `true`.
 * `n is not a prime number :(`, if `isPrime(n)` returns `false`
+
+### Grading Criteria
+Each week we will communicate grading criteria through the [issue tracker](../../issues/). Grading criteria set the basic standards for a pass, komp or fail, so it is essential you review them each week. These will change over time as your skills develop, so make sure you read the grading criteria issue carefully and tick off all the requirements.
