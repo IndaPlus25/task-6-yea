@@ -171,7 +171,7 @@ sample file cannot be found, the reader will create some simulated data.
 Alternatively, use the LogfileCreator to create some random data. Use its
 createFile method to give a file name and the number of entries to create.
 
-#### Exercise 4.73 (7.13 in 6th ed) (src - use `weblog-analyzer`)
+#### Exercise 4.73 + 4.74 (7.13 + 7.14 in 6th ed) (src - use `weblog-analyzer`)
 Complete the `numberOfAccesses` method, below, to count the total number of
 accesses recorded in the log file. Complete it by using a for loop to iterate
 over `hourCounts`:
@@ -188,23 +188,21 @@ public int numberOfAccesses() {
     return total;
 }
 ```
-
-#### Exercise 4.74 (7.14 in 6th ed) (src - use `weblog-analyzer`)
-Add your `numberOfAccesses` method to the LogAnalyzer class and check that it
+Add your `numberOfAccesses` method to the `LogAnalyzer` class and check that it
 gives the correct result.
 
 Hint: You can simplify your checking by having the analyzer read log files
 containing just a few lines of data. That way you will find it easier to
-determine whether or not your method gives the correct answer. The LogfileReader
+determine whether or not your method gives the correct answer. The `LogfileReader`
 class has a constructor with the following header, to read from a particular
 file:
 
 ```java
 /**
- * Create a LogfileReader that will supply data
- * from a particular log file.
- * @param filename The file of log data.
- */
+* Create a LogfileReader that will supply data
+* from a particular log file.
+* @param filename The file of log data.
+*/
 public LogfileReader(String filename)
 ```
 
