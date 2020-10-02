@@ -228,8 +228,8 @@ Which hour is returned by your `busiestHour` method if more than one hour has
 the biggest count?
 
 #### Exercise 4.78 (7.18) (src - use `weblog-analyzer`)
-Add a method to LogAnalyzer that finds which two-hour period is the busiest.
-Return the value of the first hour of this period.
+Add a method to LogAnalyzer called `busiestTwoHours` that finds which two-hour
+period is the busiest. Return the value of the first hour of this period.
 
 ### Executing without BlueJ: The Java `main` method!
 Read to and including the `HelloWorld` example in
