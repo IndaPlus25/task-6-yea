@@ -182,10 +182,10 @@ over `hourCounts`:
  * file.
  */
 public int numberOfAccesses() {
-	int total = 0;
-	// Add the value in each element of hourCounts // to total.
-	...
-	return total;
+    int total = 0;
+    // Add the value in each element of hourCounts // to total.
+    ...
+    return total;
 }
 ```
 
