@@ -1,20 +1,20 @@
 ### Deadline
-This work should be completed before the exercise on **Friday 11th October**.
+This work should be completed before the exercise on **Friday 9th October**.
 
 ### Instructions
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-19/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-20/course-instructions#assignments).
 
-### Homework
-Study sections:
+### Preparation
+You must read and answer the questions in the OLI material:
 
-* **5th ed:** 4.12 -- 4.17
-* **6th ed:** 4.12 to 4.15 and 7.1 to 7.4
+- Read [Module 6: Iteration](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=3f7e3794ac1f088808ba6db1054e62fe)
+- If you have not done so, goto https://kth.oli.cmu.edu/, signup and register for the course key `dd1337-ht20`
 
-of _Objects First with Bluej_ be prepared to answer any of the exercises.
+You may wish to also read Chapter 4 (4.10 -- 4.17) from, _Objects First with Java_.
 
-Also read up to and including the `Hello world` example in
-[Executing without BlueJ - The Java main method](https://gits-15.sys.kth.se/inda-19/extra-reading-material/tree/master/main-method).
+*Important:* Also read up to and including the `Hello world` example in
+[Executing without BlueJ - The Java main method](https://gits-15.sys.kth.se/inda-20/extra-reading-material/tree/master/main-method).
 
 ### Github Task:
 You must complete the following exercises. Note that exercises that have
@@ -204,7 +204,7 @@ Return the value of the first hour of this period.
 
 ### Executing without BlueJ: The Java `main` method!
 Read to and including the `HelloWorld` example in
-[Executing without BlueJ - The Java main method](https://gits-15.sys.kth.se/inda-19/extra-reading-material/tree/master/main-method).
+[Executing without BlueJ - The Java main method](https://gits-15.sys.kth.se/inda-20/extra-reading-material/tree/master/main-method).
 
 #### Exercise 4.XX
 Remember the `isPrime` method from last week (exercise 4.33)? Now, you will
