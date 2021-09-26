@@ -8,8 +8,8 @@ For instructions on how to do and submit the assignment, please see the
 ### Preparation
 You must read and answer the questions in the OLI material:
 
-- Read [Module 6: Iteration]()
-- If you have not done so, goto https://kth.oli.cmu.edu/, signup and register for the course key `dd1337-ht20`
+- Read [Module 6: Iteration](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=881a25ccac1f08882c13d81b79423526)
+- If you have not done so, goto https://kth.oli.cmu.edu/ signup and register for the course key `dd1337-ht21`
 
 You may wish to also read Chapter 4 (4.10 -- 4.17) from, _Objects First with Java_.
 
