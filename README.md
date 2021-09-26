@@ -236,7 +236,7 @@ Read to and including the `HelloWorld` example in
 #### Exercise 4.XX (src - use `prime`)
 Remember the `isPrime` method from last week (exercise 4.33)? Now, you will
 execute it from the main method! Create a class called `PrimeChecker` in the
-`PrimeChecker.java` file and copy your `isPrime` function from last week into
+`PrimeChecker.java` file and copy your `isPrime` method from last week into
 the new class.
 
 Your task is now to write a main method that loops from 1 to and including 25
