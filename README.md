@@ -1,250 +1,480 @@
-### Deadline
-This work should be completed before the exercise on **Friday 15th October**.
+# Roll the dice 🎲
 
-### Instructions
+Last week’s exercises introduced the concept of iteration and collections. You have learned about looping using `for`, `while`, and `foreach`. In this exercise, you will learn about the [`Random` class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html) and what *persistent memory* is.
+
+### 💀 Deadline
+
+This work should be completed before the exercise, on **Weekday 10th Month** depending on your group.
+
+### 👩‍🏫 Instructions
+
 For instructions on how to do and submit the assignment, please see the
 [assignments section of the course instructions](https://gits-15.sys.kth.se/inda-21/course-instructions#assignments).
 
-### Preparation
-You must read and answer the questions in the OLI material:
+### 📝 Preparation
 
-- Read [Module 6: Iteration](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=881a25ccac1f08882c13d81b79423526)
-- If you have not done so, goto https://kth.oli.cmu.edu/ signup and register for the course key `dd1337-ht21`
+You must read and answer the questions in the OLI material for Module 2.
 
-You may wish to also read Chapter 4 (4.10 -- 4.17) from, _Objects First with Java_.
+- Read [Module y: title of module]([link to OLI](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
+- If you have not done so, goto https://kth.oli.cmu.edu/, signup and register for the course key `dd1337-ht22`
 
-*Important:* Also read up to and including the `Hello world` example in
-[Executing without BlueJ - The Java main method](https://gits-15.sys.kth.se/inda-21/extra-reading-material/tree/master/main-method).
+### ✅ Learning Goals
 
-### Github Task:
-You must complete the following exercises. Note that exercises that have
-different numbering in the 6th edition have been put in parenthesis.
+This week's learning goals include:
 
-- 4.48 - 4.52
-- 4.56 - 4.59
-- 4.73 - 4.78 (7.13 - 7.18)
+1. Understanding the Java `Random` object
+2. Understanding the ternary operator
+3. Know the difference between a deep and a shallow copy
+4. Finding and fixing bugs
+5. How to handle input and output (I/O)
+6. Using an Iterator to modify a collection during iteration
+7. **Optional**: Using inheritance to avoid code duplication 
 
-You must also complete exercise 4.XX on executing Java code without BlueJ.
 
-Please commit any written answers to the [`docs`](docs) folder, and commit any
-Java code developed to the [`src`](src) folder of your KTH Github repo.
-Remember to push to KTH Github.
+### 🚨 Troubleshooting Guide
 
-### Auction Project
-This project simulates a simple auction where different lots can be bid upon by
-different people. The purpose of this project is to demonstrate collections of
-objects. How to start this project:
+If you have any questions or problems, follow this procedure: <br/>
 
-- Create an Auction object.
-- Enter a few lots via its enterLot method. Only String descriptions of the lots are required.
-- Create one or more Person objects to represent bidders.
-- Show the lots and decide on one to bid for. Make a note of the lot number.
-- Enter a bid for the lot by calling the makeABid method on the Auction object. Pass the number of the lot, the Person who is bidding, and the amount of the bid.
+1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-22/help/issues). Are other students asking about your problem?
+2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-22/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
+3. Ask a TA in person during the [weekly lab](https://queue.csc.kth.se/Queue/INDA). Check your schedule to see when next lab is.
 
-#### Exercise 4.48 (src - use `auction`)
-Add a `close` method to the Auction class. This should iterate over the
-collection of lots and print out details of all the lots. Use a for-each loop.
-Any lot that has had at least one bid for it is considered to be sold, so what
-you are looking for is Lot objects whose `highestBid` field is not null. Use a
-local variable inside the loop to store the value returned from calls to the
-`getHighestBid` method, and then test that variable for the null value.
+We encourage you to discuss with your course friends, but **do not share answers**!
 
-For lots with a bidder, the details should include the name of the successful
-bidder and the value of the winning bid. For lots with no bidder, print a
-message that indicates this.
+### 🏛 Assignment
 
-#### Exercise 4.49 (src - use `auction`)
-Add a `getUnsold` method to the Auction class with the following header:
+#### Exercise 6.0 -- What are the odds?
+
+The Java [`Random` class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html) provides a way to generate
+random numbers. Before we start using it it's a good idea to read trough some documentation so that we know how it works.
+Answer all the questions in the [docs/README.md](docs/README.md) file. You will need to refer to the
+[documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html) to be able to answer
+the questions. If you are not familiar with it, you should also read the information about the _ternary operator_ below.
+
+<details>
+<summary> 📚 The ternary operator </summary>
+
+The ternary operator is a compact `if`/`else`-statement. It is arguably quite hard to read and also referred to as the WTF-operator: `WHAT ? TRUE : FALSE`.
+Have a look at the following code: 
 
 ```java
-public ArrayList<Lot> getUnsold()
+int value = random.nextInt(2) // Generate a random number that's either 0 or 1
+// If value was 0, set valueWord to "zero", else, set it to "one"
+String valueWord = (value == 0) ? "zero" : "one";
+System.out.println("The generated value was " + valueWord);
 ```
 
-This method should iterate over the `lots` field, storing unsold lots in a new
-ArrayList local variable. What you are looking for is Lot objects whose
-`highestBid` field is null. At the end of the method, return the list of unsold
-lots.
-
-#### Exercise 4.50 (src - use `auction`)
-Suppose that the Auction class includes a method that makes it possible to
-remove a lot from the auction. Assuming that the remaining lots do not have
-their `lotNumber` fields changed when a lot is removed, write down what you
-think the impact would be on the getLot method.
-
-#### Exercise 4.51 (src - use `auction`)
-Rewrite `getLot` so that it does not rely on a lot with a particular number
-being stored at index (number–1) in the collection. For instance, if lot number
-2 has been removed, then lot number 3 will have been moved from index 2 to index
-1, and all higher lot numbers will also have been moved by one index position.
-You may assume that lots are always stored in increasing order according to
-their lot numbers.
-
-#### Exercise 4.52 (src - use `auction`)
-Add a removeLot method to the Auction class, having the following header:
+The example is equivalent to:
 
 ```java
-/**
- * Remove the lot with the given lot number.
- * @param number The number of the lot to be removed.
- * @return The Lot with the given number, or null if
- * there is no such lot.
- */
-public Lot removeLot(int number)
+int value = random.nextInt(2); // Generate a random number that's either 0 or 1
+String valueWord;
+if (value == 0) {       // WHAT ?
+    valueWord = "zero"; // TRUE
+} else {                // :
+    valueWord = "one";  // FALSE
+}
+System.out.println("The generated value was " + valueWord);
 ```
 
-This method should not assume that a lot with a given number is stored at any
-particular location within the collection.
+If you are in a bad mood, you can also nest these operators:
+```java
+int value = random.nextInt(9) // Generate a random number between 0 and 9
+String valueWord = (value == 0) ? "zero" : (value == 1) ? "one" : (value == 2) ? "two" : "more than two";
+System.out.println("The generated value was " + valueWord);
+```
 
-> **Assistant's note:** That is to say, the method should _not_ assume that
-> `number - 1` is the index of the `Lot`!
+As you can see, deciphering exactly what the code does gets hard  *very* fast. 
+You are free to use the ternary operator in your code, but in most cases we would recommend that you avoid it 
+unless you are sure that your code will be made more understandable by using it. The primary reason for 
+introducing it here is so that you will be familiar with it when you encounter it in someone else's code.
 
-### Stock Manager Project
-This project simulates a stock management application. The project is intended
-to extend your understanding of object collections, including the use of loops,
-iterators and casting. See the [Readme file](src/products/README.TXT) for a more
-comprehensive description of its behaviour.
+</details>
 
-#### Exercise 4.56 (src - use `products`)
-Open the product project and complete the StockManager class through this and
-the next few exercises. StockManager uses an ArrayList to store Product items.
-Its `addProduct` method already adds a product to the collection, but the
-following methods need completing: `delivery`, `findProduct`,
-`printProductDetails`, and `numberInStock`.
+#### Exercise 6.1 -- Generating random numbers
+Begin by creating a new java class called `RandomTester` in the [`src`](src) folder.
+Your goal is to generate an `ArrayList` containing *n* random numbers. 
+Create a method with the following header in your `RandomTester` class:
+```java
+public static ArrayList<Integer> generateNumbers(int n)
+```
+Test your method using JShell or the example main method below.
 
-Each product sold by the company is represented by an instance of the Product
-class, which records a product’s ID, name, and how many of that product are
-currently in stock. The Product class defines the `increaseQuantity` method to
-record increases in the stock level of that product. The `sellOne` method
-records that one item of that product has been sold, by reducing the `quantity`
-field level by 1. Product has been provided for you, and you should not need to
-make any alterations to it.
-
-Start by implementing the `printProductDetails` method to ensure that you are
-able to iterate over the collection of products. Just print out the details of
-each Product returned, by calling its `toString` method.
-
-#### Exercise 4.57 (src - use `products`)
-Implement the `findProduct` method. This should look through the collection for
-a product whose `id` field matches the ID argument of this method. If a matching
-product is found, it should be returned as the method’s result. If no matching
-product is found, return null.
-
-This differs from the `printProductDetails` method in that it will not
-necessarily have to examine every product in the collection before a match is
-found. For instance, if the first product in the collection matches the product
-ID, iteration can finish and that first Product object can be returned. On the
-other hand, it is possible that there might be no match in the collection. In
-that case, the whole collection will be examined without finding a product to
-return. In this case, the null value should be returned.
-
-When looking for a match, you will need to call the `getID` method on a Product.
-
-#### Exercise 4.58 (src - use `products`)
-Implement the `numberInStock` method. This should locate a product in the
-collection with a matching ID and return the current quantity of that product as
-a method result. If no product with a matching ID is found, return zero. This is
-relatively simple to implement once the `findProduct` method has been completed.
-For instance, `numberInStock` can call the `findProduct` method to do the
-searching and then call the `getQuantity` method on the result. Take care over
-products that cannot be found, though.
-
-#### Exercise 4.59 (src - use `products`)
-Implement the `delivery` method using a similar approach to that used in
-`numberInStock`. It should find the product with the given ID in the list of
-products and then call its `increaseQuantity` method.
-
-### Log Analyzer Project
-
-This project simulates a simple analyzer for the amount of traffic that a blog
-has received. The purpose of project is to provide an illustration of the use of
-arrays. How to start this project:
-
-- Create a LogAnalyzer object.
-
-The LogfileReader expects to read a file, weblog.txt, containing lines of data
-in the format:
-
-`year month day hour minute`
-
-Month values are in the range 1-12 and day values in the range 1-31. If the
-sample file cannot be found, the reader will create some simulated data.
-Alternatively, use the LogfileCreator to create some random data. Use its
-createFile method to give a file name and the number of entries to create.
-
-#### Exercise 4.73 + 4.74 (7.13 + 7.14 in 6th ed) (src - use `weblog-analyzer`)
-Complete the `numberOfAccesses` method, below, to count the total number of
-accesses recorded in the log file. Complete it by using a for loop to iterate
-over `hourCounts`:
+<details>
+<summary> 🛠 Example main method </summary>
 
 ```java
-/**
- * Return the number of accesses recorded in the log
- * file.
- */
-public int numberOfAccesses() {
-    int total = 0;
-    // Add the value in each element of hourCounts // to total.
-    ...
-    return total;
+    public static void main(String[] args) {
+        // When declaring a constant, it is a convention to put the name in capital letters
+        final int AMOUNT_OF_NUMBERS = 5;
+
+        // Generate a list with five random numbers
+        ArrayList<Integer> randomNumbers = generateNumbers(AMOUNT_OF_NUMBERS); 
+
+        // Print the numbers
+        // Every time you run this example, it should produce new numbers
+        for (Integer number : randomNumbers) {
+            System.out.println(number);
+        }
+    }
+```
+</details>
+
+#### Exercise 6.2 -- Shuffle
+Add a method in `RandomTester` that creates a _shuffled_, _deep copy_ of a provided  `ArrayList`.
+The method should _not_ modify the list that is provided as an argument. Instead, create a new list that contains 
+all the same elements as the original list in a random order. Your method must have the following header:
+```java
+public static ArrayList<Integer> shuffle(ArrayList<Integer> list)
+```
+
+<details>
+<summary> 📚 Deep vs Shallow copy in Java </summary>
+
+* **Deep copy**: a copy with completely new elements. Modifying the new list doesn’t alter the original list.
+* **Shallow copy**: a copy that *points* to elements in the original list. The list elements are shared; altering the objects in the new list also modifies the original list. 
+
+We will not go into the underlying mechanics on deep vs shallow copies in Java. The concept of [Pointers](https://en.wikipedia.org/wiki/Pointer_(computer_programming)) and [References](https://en.wikipedia.org/wiki/Reference_(computer_science)) will be introduced in later courses. If you want more explonations, we refer you to [this discussion](https://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy) on StackOverflow.
+
+</details>
+
+#### Exercise 6.3 -- Dice
+Now you will model a six-sided dice. Make a new Java class called `Dice`. It should contain two fields; `int value` and `Random random`. 
+When you create a new instance of the object, it should generate a new number between 1 and 6 and store it in the `value` field. You must also add a *getter* for the `value` field.
+
+#### Exercise 6.4 -- Sequence of dice (`RandomTester.java`)
+Make a method that stores `n` rolled dice in an array. It must have the following header:
+
+```java
+    public static ArrayList<Dice> sequenceOfDice(int n)
+```
+
+Add this method to the `RandomTester.java` file.
+
+#### Exercise 6.5 -- Highest adjacent rolls
+Add a method to your `RandomTester` class that takes a sequence of dice rolls and returns the sum of the two adjacent 
+(sv: *intilliggande*) rolls that has the *highest* value. 
+It must have the following header:
+
+```java
+    public static int highestAdjacentRolls(ArrayList<Dice> sequence)
+```
+
+If you have four rolls `{1, 1, 1, 2}`, the method should return `3`, since the sum of element 3 and 4 is `1 + 2 = 3`.
+
+
+#### Exercise 6.5 -- Smallest adjacent rolls
+Add a method to `RandomTester.java` that takes a sequence of dice rolls and returns the sum of the two adjacent rolls 
+that has the *smallest* value. It must have the following header:
+
+```java
+    public static int smallestAdjacentRolls(ArrayList<Dice> sequence)
+```
+
+If you have four rolls `{1, 1, 1, 2}`, the method should return `2`, since the sum of element 1 and 2 (or 2 and 3) is `1 + 1 = 2`.
+
+#### Exercise 6.6 -- Biased Dice
+Create a new class called `BiasedDice`, that has a probability of 50% to return 6, and otherwise an equal chance of returning 1-5. 
+
+Since you already have a `Dice` class with a getter, you could *reuse* that implementation by *extending* the `BiasedDice`:
+
+```java
+public class BiasedDice extends Dice { // New keyword: 'extends'
+    // Class code goes here
 }
 ```
-Add your `numberOfAccesses` method to the `LogAnalyzer` class and check that it
-gives the correct result.
 
-Hint: You can simplify your checking by having the analyzer read log files
-containing just a few lines of data. That way you will find it easier to
-determine whether or not your method gives the correct answer. The `LogfileReader`
-class has a constructor with the following header, to read from a particular
-file:
+When you extend the `Dice` class, the `BiasedDice` inherits all the fields and methods you implemented in `Dice`! Thus, all you have to add to the `BiasedDice` class is a constructor. 
+You can still use the `getValue()` method on your `BiasedDice` objects.
+However, in order to use the inherited *members* (fields and methods) of a class, they can not be set to `private`. 
+Instead, you can set the fields and methods to `protected`, which means that they are only accessible to the class itself 
+and all classes that extends it.
+This concept of building a class on top of another is called *inheritance* and is a core principle of object-oriented programming.
+
+> **Assistant's note:** [Inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)) will be thoroughly explained as you progress in your studies. For now, you are not required to use `extends`. If you want to annoy your TA, it is possible to assign the `value` using a ternary operator. You could also use `if` / `else` statements.
+
+#### Exercise 6.7 -- Remove dice from a sequence
+Make a method in `RandomTester.java` that returns an ArrayList with all dice of value *n* removed from a sequence. It must have the following header:
 
 ```java
-/**
-* Create a LogfileReader that will supply data
-* from a particular log file.
-* @param filename The file of log data.
-*/
-public LogfileReader(String filename)
+public static ArrayList<Dice> remove(ArrayList<Dice> sequence, int n)
 ```
 
-#### Exercise 4.75, (7.15) (src - use `weblog-analyzer`)
-Add a method `busiestHour` to LogAnalyzer that returns the busiest hour. You can
-do this by looking through the `hourCounts` array to find the element with the
-biggest count.
+Removing objects from an ArrayList while you iterate over it can lead to problems, but you can overcome this 
+with the use of an [Iterator](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html).
+You can find how to get an iterator from an `ArrayList` in the [documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html).
+Since you are not supposed to modify the contents of the `sequence` ArrayList, you will need to create a copy of it inside `remove`. Then get the iterator from the copy, and remove the elements from the copy. Finally, return the copy.
+You can read more about iterators below.
 
-Hint: Do you need to check every element to see if you have found the busiest
-hour? If so, use a for loop or a for-each loop. Which one is better in this
-case?
+<details>
+<summary> 📚 The Iterator </summary>
 
-#### Exercise 4.76 (7.16) (src - use `weblog-analyzer`)
-Add a method `quietestHour` to LogAnalyzer that returns the number of the least
-busy hour. Note: This sounds almost identical to the previous exercise, but
-there is a small trap for the unwary here. Be sure to check your method with
-some data in which every hour has a non-zero count.
+An `Iterator` can be used to iterate over the underlying _iterable_ collection, e.g., an ArrayList.
+Its API is quite self-explanatory:
 
-#### Exercise 4.77 (7.17) (src - use `weblog-analyzer`)
-Which hour is returned by your `busiestHour` method if more than one hour has
-the biggest count?
+```java
+Iterator<Integer> iterator = integerList.iterator();
+while (iterator.hasNext()) {
+    Integer number = iterator.next();
+    System.out.println(number);
+}
+```
 
-#### Exercise 4.78 (7.18) (src - use `weblog-analyzer`)
-Add a method to LogAnalyzer called `busiestTwoHours` that finds which two-hour
-period is the busiest. Return the value of the first hour of this period.
+_"But what is the difference between an iterator and a for-each loop?"_, I hear you ask.
+The iterator is a bit more flexible, since you can remove elements from the collection while iterating over it.
 
-### Executing without BlueJ: The Java `main` method!
-Read to and including the `HelloWorld` example in
-[Executing without BlueJ - The Java main method](https://gits-15.sys.kth.se/inda-21/extra-reading-material/tree/master/main-method).
+Try executing the following code:
+```java
+ArrayList<Integer> integerList = new ArrayList<>();
+integerList.add(1);
+integerList.add(2);
+integerList.add(3);
+for (Integer number : integerList) {
+    if (number == 2) {
+        integerList.remove(number);
+    }
+}
+```
+You will get a `ConcurrentModificationException`. To avoid this, you can use an iterator to remove elements from the collection while iterating over it:
+```java
+ArrayList<Integer> integerList = new ArrayList<>();
+integerList.add(1);
+integerList.add(2);
+integerList.add(3);
+Iterator<Integer> iterator = integerList.iterator();
+while (iterator.hasNext()) {
+    Integer number = iterator.next();
+    if (number == 2) {
+        iterator.remove();
+    }
+}
+```
 
-#### Exercise 4.XX (src - use `prime`)
-Remember the `isPrime` method from last week (exercise 4.33)? Now, you will
-execute it from the main method! Create a class called `PrimeChecker` in the
-`PrimeChecker.java` file and copy your `isPrime` method from last week into
-the new class.
+</details>
 
-Your task is now to write a main method that loops from 1 to and including 25
-and checks whether the current number is prime or not. For each number, you
-should print:
 
-* `n is a prime number!`, if `isPrime(n)` returns `true`.
-* `n is not a prime number :(`, if `isPrime(n)` returns `false`
+#### Exercise 6.8 -- `Dice@7e9e5f8a`???
+The following code generates a new set of dice and print them to the terminal:
 
-### Grading Criteria
-Each week we will communicate grading criteria through the [issue tracker](../../issues/). Grading criteria set the basic standards for a pass, komp or fail, so it is essential you review them each week. These will change over time as your skills develop, so make sure you read the grading criteria issue carefully and tick off all the requirements.
+```java
+public static void main(String[] args) {
+    // A constant signifying how many dice you want
+    int NUMBER_OF_DICE = 5;
+
+    // Generate a new sequence with 10 dice
+    ArrayList<Dice> sequence = sequenceOfDice(NUMBER_OF_DICE);
+
+    for(int i = 0; i < sequence.size(); i++) {
+        System.out.println("Dice " + (i + 1) + ": " + sequence.get(i));
+    }
+}
+```
+
+However, instead of showing what each roll contains, it produces something like: 
+
+```bash
+Dice 1: Dice@7344699f # I want this to be the value of the current Dice :(
+Dice 2: Dice@6b95977
+Dice 3: Dice@7e9e5f8a
+Dice 4: Dice@8bcc55f
+Dice 5: Dice@58644d46
+```
+
+Find a way to change the `Dice` class so that the actual value of each `Dice` is printed instead. 
+You are not allowed to make any changes to the `main` method above. 
+
+> **Assistant's note:** You might want to use the `String` class and the method [valueOf](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) for this purpose. Remember that in order to call a static method from another class, you have to Type `ClassName.method()`. You did this in previous exercises with the math library, for example, `Math.sqrt()`.
+
+### File Input / Output (IO)
+
+Now you will create a dice throwing simulator that stores the values of the
+thrown dice to a file.
+
+Java provides many, many ways of creating and writing to files. For this
+exercise, you will be using the
+[FileWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html)
+class. Before diving in to solving the exercises, read the following
+introduction to _exceptions_.
+
+<details>
+<summary> 📚 Introduction to exceptions</summary>
+
+As you can see in the [documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html#%3Cinit%3E(java.io.File,boolean)), the constructors for the `FileWriter` class have the words `throws IOException` next to them, like so: 
+
+```java
+public FileWriter(String fileName, boolean append) throws IOException                                                 
+```
+
+Exceptions are the preferred way of handling errors in Java. The `FileWriter`
+constructor throws an
+[`IOException`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html)
+because there might occur an error pertaining to I/O (short for Input / Output)
+when executing the constructor. For example, the user running the Java program
+might lack permission to create files in the directory that the constructor
+tries to create a file in. This will cause the constructor to be unable to
+create the required file. It will then throw an `IOException`.
+
+An unhandled exception will crash the program and print some
+debugging information to the terminal. While drastic, this is sometimes exactly
+what you want. Some kind of errors are difficult or impossible to recover from.
+But you can also _catch_ an exception, which will prevent it from crashing the
+program, and allows you as a programmer to handle the error in a more graceful
+way. The syntax is similar to `if`/`else` statements, and looks like the following:
+
+```java
+try {
+    // Here is code that may or may not throw an exception
+    FileWriter writer = new FileWriter("foo.txt", true);
+} catch (IOException theException) { // Here you specify the type of exception that you want to catch
+    // If any of the lines above throw an IOException, this block of code will be executed
+    System.out.println("Unable to open the file 'foo.txt'");
+    System.out.println("Please make sure that you have the correct permissions, and then try again!");
+}
+```
+
+There are different types of exceptions, and some exceptions _must_ be caught,
+while others are less restrictive. This is only meant as a brief overview. For
+further reading, check out Oracle's excellent
+[tutorial](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
+</details>
+
+#### Exercise 6.9 -- The `DiceGame` class
+
+Create a class called `DiceGame`. Give it a field called `writer` of type
+[FileWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html).
+Create a constructor for the class that takes no arguments. In the constructor,
+instantiate `writer` to a `FileWriter` object using the
+[FileWriter(String fileName, boolean append)](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html#%3Cinit%3E(java.io.File,boolean))
+constructor. This `writer` should be set up to write to a file called
+`dicethrows.txt` in append mode.
+
+As a final step, wrap this instantiation in a `try-catch` block. If an
+`IOException` is thrown, print an error message to the terminal.
+
+> **Assistant's note:** If the FileWriter is not in append mode, any existing
+> contents of the file will be overwritten on each write. Take a look at the [documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html#%3Cinit%3E(java.io.File,boolean)) if you feel unsure about how to achieve this.
+
+#### Exercise 6.10 -- Throwing dice
+
+Add a method with the header
+```java
+public void throwDice(String username, int numDice) 
+```
+to the `DiceGame` class. This method should use the
+[write](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Writer.html#write(java.lang.String))
+method of the `writer` you created in the previous task to write the `username`
+argument, followed by `numDice` dice throws separated by spaces, followed by a
+newline, to the output file.
+
+The following invocation:
+```java
+throwDice("Ansgar", 4);
+```
+appends a line looking like this to 'dicethrows.txt':
+```
+Ansgar 2 3 1 2
+```
+
+As you can see in the documentation for `write`, it also throws an
+`IOException`. Handle this like you did in the last exercise, with a `try-catch`
+block and a suitable error message.
+
+> **Assistant's note:** A newline is represented by the escape sequence `\n`.
+> This means that the following method calls give the same output:
+> `System.out.println("Yowza!")` = `System.out.print("Yowza!\n")`
+
+#### Exercise 6.11 -- Playing from the terminal
+Let's make it possible to play a dice game directly from the terminal. In order to do this, we will 
+need to provide some data to our program about who is playing and how many dice we want to throw.
+You can read more about how to do this below.
+
+<details>
+<summary> 📚 Passing arguments to a main method </summary>
+
+You have come across the `main` method before. You may have wondered about its
+rather long header: `public static void main(String[] args)`. That's a mouthful!
+There is a reason for each of those words, however, and now you will get
+familiar with the `String[] args` part.
+
+Normally, a Java program is invoked from the command line by writing `java`
+followed by the name  of the program, and then hitting enter, like  so:
+
+```
+$ java MyProgram
+```
+
+You also have the option of writing more words after the name of the program.
+Each extra word, delimited by whitespace, automatically becomes an element in
+the `args` array.
+
+Thus, if you have the following program:
+
+```java
+public class Parrot {
+    public static void main(String[] args) {
+        for (int i = 0; i < args.length; i++) {
+            System.out.println("Argument " + i + ": " + args[i]);
+        }
+    }
+}
+```
+
+And you invoke it like this:
+
+```
+$ java Parrot i am a little bird
+```
+
+Then the output will be:
+
+```
+Argument 0: i
+Argument 1: am
+Argument 2: a
+Argument 3: little
+Argument 4: bird
+```
+---
+
+</details>
+
+Add a `main` method in the `DiceGame` class. In it, instantiate a new
+`DiceGame` object. We will require the first element of the `args` array in `main` to be the username, and 
+the second element of the `args` array be the number of dice throws. Call the `throwDice` method using these as
+arguments. You will need to convert the number of throws (which will be `String`) 
+into an integer first. This can be done using the
+[Integer.parseInt](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html#parseInt(java.lang.String))
+method.
+
+You can assume that the input is well formed: you don't have to check that the
+number of arguments are correct, or that the integer string actually can be
+parsed.
+
+#### Exercise 6.12 -- Don't forget to flush!
+
+Run the program and roll some dice! Notice that the `dicegame.txt` file is
+created in the directory in which you run the program. But something is wrong!
+The file is, most likely, empty.
+
+You will need to
+[`flush`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Writer.html#flush())
+the `FileWriter` in order to make sure that the written contents actually are
+stored on file. This may look a bit weird and cumbersome, but it is done for
+performance reasons. For now, you can just accept it as something that has to be
+done and not worry too much about it.
+
+Add an invocation of
+[`flush`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Writer.html#flush())
+to the `throwDice` method you wrote in task 6.9. Then try to roll some dice
+again, and make sure that it works as intended by inspecting the
+`dicethrows.txt` file.
+
+### Bugs and errors?
+If you find any inconsistencies or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-22/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
+
+### Acknowledgment
+This task was designed by                <br>
+[Linus Östlund](mailto:linusost@kth.se)  <br>
+[Sofia Bobadilla](mailto:sofbob@kth.se)  <br>
+[Gabriel Skoglund](mailto:gabsko@kth.se) <br>
+[Arvid Siberov](mailto:asiberov@kth.se)  <br>

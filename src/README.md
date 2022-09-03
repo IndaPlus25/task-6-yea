@@ -1,1 +1,1 @@
-Please put your code in this folder.
+Submit your code to this folder!
