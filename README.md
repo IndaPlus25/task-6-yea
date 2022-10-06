@@ -4,18 +4,20 @@ Last week’s exercises introduced the concept of iteration and collections. You
 
 ### 💀 Deadline
 
-This work should be completed before the exercise, on **Weekday 10th Month** depending on your group.
+This work should be completed before the exercise, on **Friday 14th October** depending on your group.
 
 ### 👩‍🏫 Instructions
 
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-21/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-22/course-instructions#assignments).
 
 ### 📝 Preparation
 
-You must read and answer the questions in the OLI material for Module 2.
+You must read and answer the questions in the OLI material.
 
-- Read [Module y: title of module]([link to OLI](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
+- Read [Module 6: Iteration](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=f5e5a832ac1f088863d4d8382657ab16)
+- Read [Module 7: Documentation](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=f5e5a83bac1f08885066db1b3c2270f1)
+- Please note, you only have to read the relevant topics.
 - If you have not done so, goto https://kth.oli.cmu.edu/, signup and register for the course key `dd1337-ht22`
 
 ### ✅ Learning Goals
@@ -23,7 +25,7 @@ You must read and answer the questions in the OLI material for Module 2.
 This week's learning goals include:
 
 1. Understanding the Java `Random` object
-2. Understanding the ternary operator
+2. Understanding the [ternary operator](https://en.wikipedia.org/wiki/%3F:#Java)
 3. Know the difference between a deep and a shallow copy
 4. Finding and fixing bugs
 5. How to handle input and output (I/O)
@@ -108,11 +110,12 @@ Test your method using JShell or the example main method below.
         // When declaring a constant, it is a convention to put the name in capital letters
         final int AMOUNT_OF_NUMBERS = 5;
 
-        // Generate a list with five random numbers
+        // Generate a list with random numbers
         ArrayList<Integer> randomNumbers = generateNumbers(AMOUNT_OF_NUMBERS); 
 
         // Print the numbers
         // Every time you run this example, it should produce new numbers
+	System.out.println("The following " + AMOUNT_OF_NUMBERS + " numbers were generated:");
         for (Integer number : randomNumbers) {
             System.out.println(number);
         }
@@ -279,11 +282,11 @@ Dice 3: Dice@7e9e5f8a
 Dice 4: Dice@8bcc55f
 Dice 5: Dice@58644d46
 ```
+The output is from the the default [toString method in Object](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#toString()) which prints the name of the class and a hexadecimal hash value.
 
-Find a way to change the `Dice` class so that the actual value of each `Dice` is printed instead. 
-You are not allowed to make any changes to the `main` method above. 
+Define your own toString method (which overrides the default toString) in the `Dice` class so that the actual value of each `Dice` is printed instead. 
 
-> **Assistant's note:** You might want to use the `String` class and the method [valueOf](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) for this purpose. Remember that in order to call a static method from another class, you have to Type `ClassName.method()`. You did this in previous exercises with the math library, for example, `Math.sqrt()`.
+> **Assistant's note:** You need to return a String, not an int. Use [String.valueOf](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#valueOf(int)).
 
 ### File Input / Output (IO)
 
@@ -362,9 +365,11 @@ public void throwDice(String username, int numDice)
 ```
 to the `DiceGame` class. This method should use the
 [write](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Writer.html#write(java.lang.String))
-method of the `writer` you created in the previous task to write the `username`
-argument, followed by `numDice` dice throws separated by spaces, followed by a
-newline, to the output file.
+method of the `writer` you created in the previous exercise to write
+- the `username` argument
+- followed by `numDice` dice throws separated by spaces
+- followed by a newline
+to the output file.
 
 The following invocation:
 ```java
@@ -449,6 +454,9 @@ method.
 You can assume that the input is well formed: you don't have to check that the
 number of arguments are correct, or that the integer string actually can be
 parsed.
+
+> **Assistant's note:** You might want to add a System.out.println message in the main program to see some feedback. 
+
 
 #### Exercise 6.12 -- Don't forget to flush!
 
