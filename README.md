@@ -1,24 +1,23 @@
 # Roll the dice 🎲
 
-Last week’s exercises introduced the concept of iteration and collections. You have learned about looping using `for`, `while`, and `foreach`. In this exercise, you will learn about the [`Random` class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html) and what *persistent memory* is.
+Last week’s exercises introduced the concept of iteration and collections. You have learned about looping using `for`, `while`, and `foreach`. In this exercise, you will learn about the [`Random` class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html).
 
 ### 💀 Deadline
 
-This work should be completed before the exercise, on **Friday 14th October** depending on your group.
+This work should be completed before the exercise, on **Friday 13th October** depending on your group.
 
 ### 👩‍🏫 Instructions
 
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-22/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-23/course-instructions#assignments).
 
 ### 📝 Preparation
 
-You must read and answer the questions in the OLI material.
+- Read and answer all questions in Module 6: [Iteration](https://qbl.sys.kth.se/sections/dd1337_ht23_programmering_prog/preview/container/iteration)
+- You can access the OLI material by
+  1. logging in via Canvas (see the [OLI Torus SE](https://canvas.kth.se/courses/41415/external_tools/4247) link in the left menu)
+  2. Then start reading [Iteration](https://qbl.sys.kth.se/sections/dd1337_ht23_programmering_prog/preview/container/iteration)
 
-- Read [Module 6: Iteration](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=f5e5a832ac1f088863d4d8382657ab16)
-- Read [Module 7: Documentation](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=f5e5a83bac1f08885066db1b3c2270f1)
-- Please note, you only have to read the relevant topics.
-- If you have not done so, goto https://kth.oli.cmu.edu/, signup and register for the course key `dd1337-ht22`
 
 ### ✅ Learning Goals
 
@@ -28,18 +27,17 @@ This week's learning goals include:
 2. Understanding the [ternary operator](https://en.wikipedia.org/wiki/%3F:#Java)
 3. Know the difference between a deep and a shallow copy
 4. Finding and fixing bugs
-5. How to handle input and output (I/O)
-6. Using an Iterator to modify a collection during iteration
-7. **Optional**: Using inheritance to avoid code duplication 
+5. Using an Iterator to modify a collection during iteration
+6. **Optional**: Using inheritance to avoid code duplication 
 
 
 ### 🚨 Troubleshooting Guide
 
 If you have any questions or problems, follow this procedure: <br/>
 
-1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-22/help/issues). Are other students asking about your problem?
-2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-22/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
-3. Ask a TA in person during the [weekly lab](https://queue.csc.kth.se/Queue/INDA). Check your schedule to see when next lab is.
+1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-23/help/issues). Are other students asking about your problem?
+2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-23/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
+3. Ask a TA in person during the [weekly lab](https://queue.csc.kth.se/Queue/INDA). Check your schedule to see when the next lab is.
 
 We encourage you to discuss with your course friends, but **do not share answers**!
 
@@ -48,12 +46,13 @@ We encourage you to discuss with your course friends, but **do not share answers
 #### Exercise 6.0 -- What are the odds?
 
 The Java [`Random` class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html) provides a way to generate
-random numbers. Before we start using it it's a good idea to read trough some documentation so that we know how it works.
+random numbers. Before we start using it it's a good idea to read through some documentation so that we know how it works.
 Answer all the questions in the [docs/README.md](docs/README.md) file. You will need to refer to the
 [documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html) to be able to answer
 the questions. If you are not familiar with it, you should also read the information about the _ternary operator_ below.
 
 <details>
+	
 <summary> 📚 The ternary operator </summary>
 
 The ternary operator is a compact `if`/`else`-statement. It is arguably quite hard to read and also referred to as the WTF-operator: `WHAT ? TRUE : FALSE`.
@@ -94,7 +93,7 @@ introducing it here is so that you will be familiar with it when you encounter i
 </details>
 
 #### Exercise 6.1 -- Generating random numbers
-Begin by creating a new java class called `RandomTester` in the [`src`](src) folder.
+Begin by creating a new Java class called `RandomTester` in the [`src`](src) folder.
 Your goal is to generate an `ArrayList` containing *n* random numbers. 
 Create a method with the following header in your `RandomTester` class:
 ```java
@@ -104,7 +103,7 @@ Test your method using JShell or the example main method below.
 
 <details>
 <summary> 🛠 Example main method </summary>
-
+	
 ```java
     public static void main(String[] args) {
         // When declaring a constant, it is a convention to put the name in capital letters
@@ -126,18 +125,19 @@ Test your method using JShell or the example main method below.
 #### Exercise 6.2 -- Shuffle
 Add a method in `RandomTester` that creates a _shuffled_, _deep copy_ of a provided  `ArrayList`.
 The method should _not_ modify the list that is provided as an argument. Instead, create a new list that contains 
-all the same elements as the original list in a random order. Your method must have the following header:
+all the same elements as the original list in random order. Your method must have the following header:
 ```java
 public static ArrayList<Integer> shuffle(ArrayList<Integer> list)
 ```
 
 <details>
+	
 <summary> 📚 Deep vs Shallow copy in Java </summary>
 
 * **Deep copy**: a copy with completely new elements. Modifying the new list doesn’t alter the original list.
 * **Shallow copy**: a copy that *points* to elements in the original list. The list elements are shared; altering the objects in the new list also modifies the original list. 
 
-We will not go into the underlying mechanics on deep vs shallow copies in Java. The concept of [Pointers](https://en.wikipedia.org/wiki/Pointer_(computer_programming)) and [References](https://en.wikipedia.org/wiki/Reference_(computer_science)) will be introduced in later courses. If you want more explonations, we refer you to [this discussion](https://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy) on StackOverflow.
+We will not go into the underlying mechanics of deep vs shallow copies in Java. The concept of [Pointers](https://en.wikipedia.org/wiki/Pointer_(computer_programming)) and [References](https://en.wikipedia.org/wiki/Reference_(computer_science)) will be introduced in later courses. If you want more explanations, we refer you to [this discussion](https://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy) on StackOverflow.
 
 </details>
 
@@ -162,21 +162,28 @@ It must have the following header:
 ```java
     public static int highestAdjacentRolls(ArrayList<Dice> sequence)
 ```
+To check this we must test all adjacent pairs. If we for example have five rolls `{1, 1, 2, 1, 5}`, we should check the following cases:
 
-If you have four rolls `{1, 1, 1, 2}`, the method should return `3`, since the sum of element 3 and 4 is `1 + 2 = 3`.
+- `1 + 1 = 2`
+- `1 + 2 = 3`
+- `2 + 1 = 3`
+- `1 + 5 = 6`
 
+Here we can see that the last adjacent pair of dice (the last two elements) have the highest sum, and the method should therefore return `6`. 
 
-#### Exercise 6.5 -- Smallest adjacent rolls
+Similarly, the method should return `10` if you have 7 rolls `{6, 1, 5, 5, 4, 3, 2}` since the highest sum of two adjacent dice is `5 + 5 = 10`. It does not matter if the sum occurs multiple times.
+
+#### Exercise 6.6 -- Smallest adjacent rolls
 Add a method to `RandomTester.java` that takes a sequence of dice rolls and returns the sum of the two adjacent rolls 
-that has the *smallest* value. It must have the following header:
+that have the *smallest* value. It must have the following header:
 
 ```java
     public static int smallestAdjacentRolls(ArrayList<Dice> sequence)
 ```
 
-If you have four rolls `{1, 1, 1, 2}`, the method should return `2`, since the sum of element 1 and 2 (or 2 and 3) is `1 + 1 = 2`.
+If you have five rolls `{1, 1, 2, 1, 5}`, the method should return `2` since the sum of the two smalles adjacent elements are `1 + 1 = 2`.
 
-#### Exercise 6.6 -- Biased Dice
+#### Exercise 6.7 -- Biased Dice
 Create a new class called `BiasedDice`, that has a probability of 50% to return 6, and otherwise an equal chance of returning 1-5. 
 
 Since you already have a `Dice` class with a getter, you could *reuse* that implementation by *extending* the `BiasedDice`:
@@ -191,12 +198,12 @@ When you extend the `Dice` class, the `BiasedDice` inherits all the fields and m
 You can still use the `getValue()` method on your `BiasedDice` objects.
 However, in order to use the inherited *members* (fields and methods) of a class, they can not be set to `private`. 
 Instead, you can set the fields and methods to `protected`, which means that they are only accessible to the class itself 
-and all classes that extends it.
+and all classes that extend it.
 This concept of building a class on top of another is called *inheritance* and is a core principle of object-oriented programming.
 
 > **Assistant's note:** [Inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)) will be thoroughly explained as you progress in your studies. For now, you are not required to use `extends`. If you want to annoy your TA, it is possible to assign the `value` using a ternary operator. You could also use `if` / `else` statements.
 
-#### Exercise 6.7 -- Remove dice from a sequence
+#### Exercise 6.8 -- Remove dice from a sequence
 Make a method in `RandomTester.java` that returns an ArrayList with all dice of value *n* removed from a sequence. It must have the following header:
 
 ```java
@@ -224,7 +231,7 @@ while (iterator.hasNext()) {
 ```
 
 _"But what is the difference between an iterator and a for-each loop?"_, I hear you ask.
-The iterator is a bit more flexible, since you can remove elements from the collection while iterating over it.
+The iterator is a bit more flexible since you can remove elements from the collection while iterating over it.
 
 Try executing the following code:
 ```java
@@ -256,7 +263,7 @@ while (iterator.hasNext()) {
 </details>
 
 
-#### Exercise 6.8 -- `Dice@7e9e5f8a`???
+#### Exercise 6.9 -- `Dice@7e9e5f8a`???
 The following code generates a new set of dice and print them to the terminal:
 
 ```java
@@ -288,201 +295,36 @@ Define your own toString method (which overrides the default toString) in the `D
 
 > **Assistant's note:** You need to return a String, not an int. Use [String.valueOf](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#valueOf(int)).
 
-### File Input / Output (IO)
+### ❎ Checklist 
+- [ ] Answer all questions in [docs/README.md](docs/README.md)
+- [ ] Create a Java class called `RandomTester` in the [`src`](src) folder containing the following methods:
+	- [ ] `public static ArrayList<Integer> generateNumbers(int n)` 
+	- [ ] `public static ArrayList<Integer> shuffle(ArrayList<Integer> list)` make sure you use a deep copy.
+	- [ ] `public static ArrayList<Dice> sequenceOfDice(int n)`
+	- [ ] `public static int highestAdjacentRolls(ArrayList<Dice> sequence)`
+	- [ ] `public static int smallestAdjacentRolls(ArrayList<Dice> sequence)`
+	- [ ] `public static ArrayList<Dice> remove(ArrayList<Dice> sequence, int n)`
+- [ ] Make a Java class called `Dice`. 
+	- [ ] Add two fields; `int value` and `Random random`. 
+	- [ ] Make it so that it generates a new number between 1 and 6 and store it in the `value` field on creation. 
+	- [ ] Add a *getter* for the `value` field.
+	- [ ] Define your own toString method that prints actual value of each `Dice`. 
+- [ ] Create a class called `BiasedDice`, that *extends* the `Dice` class.
+	- [ ] It should have a 50% chance to return 6, and otherwise an equal chance of returning a number 1-5. 
 
-Now you will create a dice throwing simulator that stores the values of the
-thrown dice to a file.
+> **Assistant's note:** We have added this checklist for you to make a final check before handing in your work. You don't have to tick the boxes unless you want to (to tick a box, place an "x" within the brackets when editing the README.md)
+	
+### 🐞 Bugs and errors?
+If you find any inconsistencies or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-23/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
 
-Java provides many, many ways of creating and writing to files. For this
-exercise, you will be using the
-[FileWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html)
-class. Before diving in to solving the exercises, read the following
-introduction to _exceptions_.
-
-<details>
-<summary> 📚 Introduction to exceptions</summary>
-
-As you can see in the [documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html#%3Cinit%3E(java.io.File,boolean)), the constructors for the `FileWriter` class have the words `throws IOException` next to them, like so: 
-
-```java
-public FileWriter(String fileName, boolean append) throws IOException                                                 
-```
-
-Exceptions are the preferred way of handling errors in Java. The `FileWriter`
-constructor throws an
-[`IOException`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html)
-because there might occur an error pertaining to I/O (short for Input / Output)
-when executing the constructor. For example, the user running the Java program
-might lack permission to create files in the directory that the constructor
-tries to create a file in. This will cause the constructor to be unable to
-create the required file. It will then throw an `IOException`.
-
-An unhandled exception will crash the program and print some
-debugging information to the terminal. While drastic, this is sometimes exactly
-what you want. Some kind of errors are difficult or impossible to recover from.
-But you can also _catch_ an exception, which will prevent it from crashing the
-program, and allows you as a programmer to handle the error in a more graceful
-way. The syntax is similar to `if`/`else` statements, and looks like the following:
-
-```java
-try {
-    // Here is code that may or may not throw an exception
-    FileWriter writer = new FileWriter("foo.txt", true);
-} catch (IOException theException) { // Here you specify the type of exception that you want to catch
-    // If any of the lines above throw an IOException, this block of code will be executed
-    System.out.println("Unable to open the file 'foo.txt'");
-    System.out.println("Please make sure that you have the correct permissions, and then try again!");
-}
-```
-
-There are different types of exceptions, and some exceptions _must_ be caught,
-while others are less restrictive. This is only meant as a brief overview. For
-further reading, check out Oracle's excellent
-[tutorial](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
-</details>
-
-#### Exercise 6.9 -- The `DiceGame` class
-
-Create a class called `DiceGame`. Give it a field called `writer` of type
-[FileWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html).
-Create a constructor for the class that takes no arguments. In the constructor,
-instantiate `writer` to a `FileWriter` object using the
-[FileWriter(String fileName, boolean append)](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html#%3Cinit%3E(java.io.File,boolean))
-constructor. This `writer` should be set up to write to a file called
-`dicethrows.txt` in append mode.
-
-As a final step, wrap this instantiation in a `try-catch` block. If an
-`IOException` is thrown, print an error message to the terminal.
-
-> **Assistant's note:** If the FileWriter is not in append mode, any existing
-> contents of the file will be overwritten on each write. Take a look at the [documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html#%3Cinit%3E(java.io.File,boolean)) if you feel unsure about how to achieve this.
-
-#### Exercise 6.10 -- Throwing dice
-
-Add a method with the header
-```java
-public void throwDice(String username, int numDice) 
-```
-to the `DiceGame` class. This method should use the
-[write](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Writer.html#write(java.lang.String))
-method of the `writer` you created in the previous exercise to write
-- the `username` argument
-- followed by `numDice` dice throws separated by spaces
-- followed by a newline
-to the output file.
-
-The following invocation:
-```java
-throwDice("Ansgar", 4);
-```
-appends a line looking like this to 'dicethrows.txt':
-```
-Ansgar 2 3 1 2
-```
-
-As you can see in the documentation for `write`, it also throws an
-`IOException`. Handle this like you did in the last exercise, with a `try-catch`
-block and a suitable error message.
-
-> **Assistant's note:** A newline is represented by the escape sequence `\n`.
-> This means that the following method calls give the same output:
-> `System.out.println("Yowza!")` = `System.out.print("Yowza!\n")`
-
-#### Exercise 6.11 -- Playing from the terminal
-Let's make it possible to play a dice game directly from the terminal. In order to do this, we will 
-need to provide some data to our program about who is playing and how many dice we want to throw.
-You can read more about how to do this below.
-
-<details>
-<summary> 📚 Passing arguments to a main method </summary>
-
-You have come across the `main` method before. You may have wondered about its
-rather long header: `public static void main(String[] args)`. That's a mouthful!
-There is a reason for each of those words, however, and now you will get
-familiar with the `String[] args` part.
-
-Normally, a Java program is invoked from the command line by writing `java`
-followed by the name  of the program, and then hitting enter, like  so:
-
-```
-$ java MyProgram
-```
-
-You also have the option of writing more words after the name of the program.
-Each extra word, delimited by whitespace, automatically becomes an element in
-the `args` array.
-
-Thus, if you have the following program:
-
-```java
-public class Parrot {
-    public static void main(String[] args) {
-        for (int i = 0; i < args.length; i++) {
-            System.out.println("Argument " + i + ": " + args[i]);
-        }
-    }
-}
-```
-
-And you invoke it like this:
-
-```
-$ java Parrot i am a little bird
-```
-
-Then the output will be:
-
-```
-Argument 0: i
-Argument 1: am
-Argument 2: a
-Argument 3: little
-Argument 4: bird
-```
----
-
-</details>
-
-Add a `main` method in the `DiceGame` class. In it, instantiate a new
-`DiceGame` object. We will require the first element of the `args` array in `main` to be the username, and 
-the second element of the `args` array be the number of dice throws. Call the `throwDice` method using these as
-arguments. You will need to convert the number of throws (which will be `String`) 
-into an integer first. This can be done using the
-[Integer.parseInt](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html#parseInt(java.lang.String))
-method.
-
-You can assume that the input is well formed: you don't have to check that the
-number of arguments are correct, or that the integer string actually can be
-parsed.
-
-> **Assistant's note:** You might want to add a System.out.println message in the main program to see some feedback. 
-
-
-#### Exercise 6.12 -- Don't forget to flush!
-
-Run the program and roll some dice! Notice that the `dicegame.txt` file is
-created in the directory in which you run the program. But something is wrong!
-The file is, most likely, empty.
-
-You will need to
-[`flush`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Writer.html#flush())
-the `FileWriter` in order to make sure that the written contents actually are
-stored on file. This may look a bit weird and cumbersome, but it is done for
-performance reasons. For now, you can just accept it as something that has to be
-done and not worry too much about it.
-
-Add an invocation of
-[`flush`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Writer.html#flush())
-to the `throwDice` method you wrote in task 6.9. Then try to roll some dice
-again, and make sure that it works as intended by inspecting the
-`dicethrows.txt` file.
-
-### Bugs and errors?
-If you find any inconsistencies or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-22/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
-
-### Acknowledgment
+### 🙏 Acknowledgment
 This task was designed by                <br>
 [Linus Östlund](mailto:linusost@kth.se)  <br>
 [Sofia Bobadilla](mailto:sofbob@kth.se)  <br>
 [Gabriel Skoglund](mailto:gabsko@kth.se) <br>
 [Arvid Siberov](mailto:asiberov@kth.se)  <br>
+[Alexander Runebou](mailto:alerun@kth.se)<br>
+
+Proofreading & Bug fixes by <br>
+[Alexander Jastrzebski]()   <br>
+[Karl Walfridson]()         <br>
