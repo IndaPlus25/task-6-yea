@@ -4,20 +4,17 @@ Last week’s exercises introduced the concept of iteration and collections. You
 
 ### 💀 Deadline
 
-This work should be completed before the exercise, on **Friday 13th October** depending on your group.
+This work should be completed before the exercise, on **Friday 11 October** depending on your group.
 
 ### 👩‍🏫 Instructions
 
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-23/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-24/course-instructions#assignments).
 
 ### 📝 Preparation
 
-- Read and answer all questions in Module 6: [Iteration](https://qbl.sys.kth.se/sections/dd1337_ht23_programmering_prog/preview/container/iteration)
-- You can access the OLI material by
-  1. logging in via Canvas (see the [OLI Torus SE](https://canvas.kth.se/courses/41415/external_tools/4247) link in the left menu)
-  2. Then start reading [Iteration](https://qbl.sys.kth.se/sections/dd1337_ht23_programmering_prog/preview/container/iteration)
-
+- Review the [lecture slides](https://docs.google.com/presentation/d/1EDtEsIGfYasa1pMqaGSxSXVIDIO-KDesav8p_EnGLlk/edit#slide=id.p)
+- Read and answer all questions in [Module 7: Documentation](https://qbl.sys.kth.se/sections/dd1337_programming/container/documentation)
 
 ### ✅ Learning Goals
 
@@ -30,16 +27,15 @@ This week's learning goals include:
 5. Using an Iterator to modify a collection during iteration
 6. **Optional**: Using inheritance to avoid code duplication 
 
-
 ### 🚨 Troubleshooting Guide
 
 If you have any questions or problems, follow this procedure: <br/>
 
-1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-23/help/issues). Are other students asking about your problem?
-2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-23/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
+1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-24/help/issues). Are other students asking about your problem?
+2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-24/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
 3. Ask a TA in person during the [weekly lab](https://queue.csc.kth.se/Queue/INDA). Check your schedule to see when the next lab is.
 
-We encourage you to discuss with your course friends, but **do not share answers**!
+We encourage you to discuss with your course friends, **but do not share answers!** Similarily, use of any AI services 🤖 are great to help explain things, **but please do not submit AI-generated solutions** - you must be both responsible for your own solutions and must be able to explain them under examination.
 
 ### 🏛 Assignment
 
@@ -315,7 +311,7 @@ Define your own toString method (which overrides the default toString) in the `D
 > **Assistant's note:** We have added this checklist for you to make a final check before handing in your work. You don't have to tick the boxes unless you want to (to tick a box, place an "x" within the brackets when editing the README.md)
 	
 ### 🐞 Bugs and errors?
-If you find any inconsistencies or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-23/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
+If you find any inconsistencies or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-24/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
 
 ### 🙏 Acknowledgment
 This task was designed by                <br>
