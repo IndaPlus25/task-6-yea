@@ -4,17 +4,17 @@ Last week’s exercises introduced the concept of iteration and collections. You
 
 ### 💀 Deadline
 
-This work should be completed before the exercise, on **Friday 11 October** depending on your group.
+This work should be completed before the exercise, on **Friday 10 October** depending on your group.
 
 ### 👩‍🏫 Instructions
 
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-24/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-25/course-instructions#assignments).
 
 ### 📝 Preparation
 
 - Review the [lecture slides](https://docs.google.com/presentation/d/1EDtEsIGfYasa1pMqaGSxSXVIDIO-KDesav8p_EnGLlk/edit#slide=id.p)
-- Read and answer all questions in [Module 7: Documentation](https://qbl.sys.kth.se/sections/dd1337_programming/container/documentation)
+- Read and answer all questions in [Module 7: Documentation](https://qbl.sys.kth.se/sections/dd1337_ht25_programming/container/documentation)
 
 ### ✅ Learning Goals
 
@@ -31,11 +31,19 @@ This week's learning goals include:
 
 If you have any questions or problems, follow this procedure: <br/>
 
-1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-24/help/issues). Are other students asking about your problem?
-2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-24/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
+1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-25/help/issues). Are other students asking about your problem?
+2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-25/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
 3. Ask a TA in person during the [weekly lab](https://queue.csc.kth.se/Queue/INDA). Check your schedule to see when the next lab is.
 
 We encourage you to discuss with your course friends, **but do not share answers!** Similarily, use of any AI services 🤖 are great to help explain things, **but please do not submit AI-generated solutions** - you must be both responsible for your own solutions and must be able to explain them under examination.
+
+### 🗺️ Make a Plan
+
+- Check your feedback on last week's issue tracker for a review and tips!
+- Open issues for your plan in the [issue tracker](/../../issues).
+- Commit at least once per issue.
+- Reference issues from commit messages using `Fixes #N` to automatically close them.
+- Read more about it [here](https://gits-15.sys.kth.se/inda-25/course-instructions/blob/main/ice-guide.md).
 
 ### 🏛 Assignment
 
@@ -291,27 +299,15 @@ Define your own toString method (which overrides the default toString) in the `D
 
 > **Assistant's note:** You need to return a String, not an int. Use [String.valueOf](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#valueOf(int)).
 
-### ❎ Checklist 
-- [ ] Answer all questions in [docs/README.md](docs/README.md)
-- [ ] Create a Java class called `RandomTester` in the [`src`](src) folder containing the following methods:
-	- [ ] `public static ArrayList<Integer> generateNumbers(int n)` 
-	- [ ] `public static ArrayList<Integer> shuffle(ArrayList<Integer> list)` make sure you use a deep copy.
-	- [ ] `public static ArrayList<Dice> sequenceOfDice(int n)`
-	- [ ] `public static int highestAdjacentRolls(ArrayList<Dice> sequence)`
-	- [ ] `public static int smallestAdjacentRolls(ArrayList<Dice> sequence)`
-	- [ ] `public static ArrayList<Dice> remove(ArrayList<Dice> sequence, int n)`
-- [ ] Make a Java class called `Dice`. 
-	- [ ] Add two fields; `int value` and `Random random`. 
-	- [ ] Make it so that it generates a new number between 1 and 6 and store it in the `value` field on creation. 
-	- [ ] Add a *getter* for the `value` field.
-	- [ ] Define your own toString method that prints actual value of each `Dice`. 
-- [ ] Create a class called `BiasedDice`, that *extends* the `Dice` class.
-	- [ ] It should have a 50% chance to return 6, and otherwise an equal chance of returning a number 1-5. 
-
-> **Assistant's note:** We have added this checklist for you to make a final check before handing in your work. You don't have to tick the boxes unless you want to (to tick a box, place an "x" within the brackets when editing the README.md)
+### ❎ Checklist
+- [ ] Cloned your repository to your local computer
+- [ ] Made a solid plan using issues
+- [ ] Completed all exercises to be best of your ability
+- [ ] Closed issues for completed exercises (with "Fixes #N" in commit messages)
+- [ ] Pushed your work to KTH GitHub!
 	
 ### 🐞 Bugs and errors?
-If you find any inconsistencies or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-24/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
+If you find any inconsistencies or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-25/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
 
 ### 🙏 Acknowledgment
 This task was designed by                <br>
