@@ -40,7 +40,7 @@ We encourage you to discuss with your course friends, **but do not share answers
 ### 🗺️ Make a Plan
 
 - Check your feedback on last week's issue tracker for a review and tips!
-- Open issues for your plan in the [issue tracker](/../../issues).
+- Open issues for your plan in the [issue tracker](../../issues).
 - Commit at least once per issue.
 - Reference issues from commit messages using `Fixes #N` to automatically close them.
 - Read more about it [here](https://gits-15.sys.kth.se/inda-25/course-instructions/blob/main/ice-guide.md).
@@ -96,6 +96,8 @@ introducing it here is so that you will be familiar with it when you encounter i
 
 </details>
 
+[Open an issue for Exercise 6.0](../../issues/new?title=Exercise+6.0+--+What+are+the+odds%3F)
+
 #### Exercise 6.1 -- Generating random numbers
 Begin by creating a new Java class called `RandomTester` in the [`src`](src) folder.
 Your goal is to generate an `ArrayList` containing *n* random numbers. 
@@ -126,6 +128,8 @@ Test your method using JShell or the example main method below.
 ```
 </details>
 
+[Open an issue for Exercise 6.1](../../issues/new?title=Exercise+6.1+--+Generating+random+numbers)
+
 #### Exercise 6.2 -- Shuffle
 Add a method in `RandomTester` that creates a _shuffled_, _deep copy_ of a provided  `ArrayList`.
 The method should _not_ modify the list that is provided as an argument. Instead, create a new list that contains 
@@ -145,9 +149,13 @@ We will not go into the underlying mechanics of deep vs shallow copies in Java. 
 
 </details>
 
+[Open an issue for Exercise 6.2](../../issues/new?title=Exercise+6.2+--+Shuffle)
+
 #### Exercise 6.3 -- Dice
 Now you will model a six-sided dice. Make a new Java class called `Dice`. It should contain two fields; `int value` and `Random random`. 
 When you create a new instance of the object, it should generate a new number between 1 and 6 and store it in the `value` field. You must also add a *getter* for the `value` field.
+
+[Open an issue for Exercise 6.3](../../issues/new?title=Exercise+6.3+--+Dice)
 
 #### Exercise 6.4 -- Sequence of dice (`RandomTester.java`)
 Make a method that stores `n` rolled dice in an array. It must have the following header:
@@ -157,6 +165,8 @@ Make a method that stores `n` rolled dice in an array. It must have the followin
 ```
 
 Add this method to the `RandomTester.java` file.
+
+[Open an issue for Exercise 6.4](../../issues/new?title=Exercise+6.4+--+Sequence+of+dice+%28RandomTester.java%29)
 
 #### Exercise 6.5 -- Highest adjacent rolls
 Add a method to your `RandomTester` class that takes a sequence of dice rolls and returns the sum of the two adjacent 
@@ -177,6 +187,8 @@ Here we can see that the last adjacent pair of dice (the last two elements) have
 
 Similarly, the method should return `10` if you have 7 rolls `{6, 1, 5, 5, 4, 3, 2}` since the highest sum of two adjacent dice is `5 + 5 = 10`. It does not matter if the sum occurs multiple times.
 
+[Open an issue for Exercise 6.5](../../issues/new?title=Exercise+6.5+--+Highest+adjacent+rolls)
+
 #### Exercise 6.6 -- Smallest adjacent rolls
 Add a method to `RandomTester.java` that takes a sequence of dice rolls and returns the sum of the two adjacent rolls 
 that have the *smallest* value. It must have the following header:
@@ -186,6 +198,8 @@ that have the *smallest* value. It must have the following header:
 ```
 
 If you have five rolls `{1, 1, 2, 1, 5}`, the method should return `2` since the sum of the two smalles adjacent elements are `1 + 1 = 2`.
+
+[Open an issue for Exercise 6.6](../../issues/new?title=Exercise+6.6+--+Smallest+adjacent+rolls)
 
 #### Exercise 6.7 -- Biased Dice
 Create a new class called `BiasedDice`, that has a probability of 50% to return 6, and otherwise an equal chance of returning 1-5. 
@@ -206,6 +220,8 @@ and all classes that extend it.
 This concept of building a class on top of another is called *inheritance* and is a core principle of object-oriented programming.
 
 > **Assistant's note:** [Inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)) will be thoroughly explained as you progress in your studies. For now, you are not required to use `extends`. If you want to annoy your TA, it is possible to assign the `value` using a ternary operator. You could also use `if` / `else` statements.
+
+[Open an issue for Exercise 6.7](../../issues/new?title=Exercise+6.7+--+Biased+Dice)
 
 #### Exercise 6.8 -- Remove dice from a sequence
 Make a method in `RandomTester.java` that returns an ArrayList with all dice of value *n* removed from a sequence. It must have the following header:
@@ -266,6 +282,7 @@ while (iterator.hasNext()) {
 
 </details>
 
+[Open an issue for Exercise 6.8](../../issues/new?title=Exercise+6.8+--+Remove+dice+from+a+sequence)
 
 #### Exercise 6.9 -- `Dice@7e9e5f8a`???
 The following code generates a new set of dice and print them to the terminal:
@@ -298,6 +315,8 @@ The output is from the the default [toString method in Object](https://docs.orac
 Define your own toString method (which overrides the default toString) in the `Dice` class so that the actual value of each `Dice` is printed instead. 
 
 > **Assistant's note:** You need to return a String, not an int. Use [String.valueOf](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#valueOf(int)).
+
+[Open an issue for Exercise 6.9](../../issues/new?title=Exercise+6.9+--+Dice%40%7Be9e5f8a%7D%3F%3F%3F)
 
 ### ❎ Checklist
 - [ ] Cloned your repository to your local computer
